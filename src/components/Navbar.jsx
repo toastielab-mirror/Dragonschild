@@ -87,14 +87,6 @@ export const Navbar = () => {
               </a>
               <a
                 className="navbar-link"
-                href="#features"
-                onClick={() => setIsOpen(false)}
-                aria-label="sFeatures"
-              >
-                Features
-              </a>
-              <a
-                className="navbar-link"
                 href="#feedback"
                 onClick={() => setIsOpen(false)}
                 aria-label="Feedback"
