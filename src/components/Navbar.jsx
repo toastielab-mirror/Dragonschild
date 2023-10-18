@@ -25,7 +25,7 @@ export const Navbar = () => {
                 <DragonsChildLogo />
               </div>
               <div className="text-white font-['Inter'] font-bold text-xl">
-                anditCo
+                DragonsChild
               </div>
             </div>
           </a>
