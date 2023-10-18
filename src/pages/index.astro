@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Hero } from "../components/Hero.jsx";
+import { Navbar } from "../components/Navbar.jsx";
+import { Testimonials } from "../components/Testimonials.jsx";
+import { Pricing } from "../components/Pricing.jsx";
+import { FAQ } from "../components/FAQ.jsx";
+import { Brands } from "../components/Brands.jsx";
+import {Divider} from "../components/Divider"
+import { Footer } from "../components/Footer.jsx";
+import "../styles/Navbar.styles.css";
+import "../styles/Hero.styles.css";
+import "../styles/Utils.styles.css";
+import "../styles/FeaturesDiagonal.styles.css";
+import { ScrollUpButton } from "../components/ScrollUpButton";
+
+---
+<Layout title="DragonsChild">
+  <Navbar client:load />
+  <Hero client:load />
+  <Divider />
+  <Footer />
+  <ScrollUpButton  client:load />
+</Layout>
