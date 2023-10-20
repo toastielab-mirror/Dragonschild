@@ -40,7 +40,7 @@ export const Navbar = () => {
             <a className="navbar-link" href="#home" aria-label="Home">
               Home
             </a>
-            <a className="navbar-link" href="https://social.valkyriecoms.com/@Dragonschildhosting" aria-label="Feedback">
+            <a className="navbar-link" href="https://social.valkyriecoms.com/@dragonschildteam" aria-label="Feedback">
               Feedback
             </a>
           </div>
