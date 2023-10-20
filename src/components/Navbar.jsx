@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { DragonsChildLogo } from "../assets/logos/DragonsChild";
 import { GithubIcon } from "../assets/icons/GithubIcon";
-import { DragonsIcon } from "../assets/icons/BygulIcon";
+import { BygulIcon } from "../assets/icons/BygulIcon";
 import { InstagramIcon } from "../assets/icons/InstagramIcon";
 import { TwitterIcon } from "../assets/icons/TwitterIcon";
 
