@@ -48,7 +48,7 @@ export const Footer = () => {
                 <h3 className="mb-6 text-2xl font-bold text-white">Company</h3>
                 <ul>
                   <li>
-                    <a className="text-gray-400 hover:text-gray-300" href="mailto:support@dragonschildstudios.com" aria-label="" >
+                    <a className="text-gray-400 hover:text-gray-300" href="mailto:contact@dragonschildstudios.com" aria-label="" >
                       Contact Us
                     </a>
                   </li>
