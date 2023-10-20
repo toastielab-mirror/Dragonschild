@@ -25,7 +25,7 @@ export const Navbar = () => {
                 <DragonsChildLogo />
               </div>
               <div className="text-white font-['Inter'] font-bold text-xl">
-                DragonsChild
+                Dragons child studios
               </div>
             </div>
           </a>
@@ -40,8 +40,8 @@ export const Navbar = () => {
             <a className="navbar-link" href="#home" aria-label="Home">
               Home
             </a>
-            <a className="navbar-link" href="https://social.valkyriecoms.com/@dragonschildteam" aria-label="Feedback">
-              Feedback
+            <a className="navbar-link" href="https://social.valkyriecoms.com/@dragonschildteam" aria-label="Our profile">
+              Our profile
             </a>
           </div>
         </motion.div>
@@ -84,11 +84,11 @@ export const Navbar = () => {
               </a>
               <a
                 className="navbar-link"
-                href="#feedback"
+                href="#profile"
                 onClick={() => setIsOpen(false)}
-                aria-label="Feedback"
+                aria-label="Our profile"
               >
-                Feedback
+                Our profile
               </a>
             </div>
           </motion.div>
