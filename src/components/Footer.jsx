@@ -30,7 +30,7 @@ export const Footer = () => {
             </div>
             <div className="w-full lg:w-1/2  lg:pl-16 hidden lg:flex flex-wrap justify-between">
               <div className="w-full md:w-1/3 lg:w-auto mb-16 md:mb-0">
-                <h3 className="mb-6 text-2xl font-bold text-white">Other Dragons child projects</h3>
+                <h3 className="mb-6 text-2xl font-bold text-white">Our projects</h3>
                 <ul>
                   <li className="mb-4">
                     <a className="text-gray-400 hover:text-gray-300" href="https://toastielab.dev" aria-label="" >
