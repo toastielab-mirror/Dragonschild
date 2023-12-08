@@ -38,7 +38,7 @@ export const Footer = () => {
                     </a>
                   </li>
                   <li className="mb-4">
-                    <a className="text-gray-400 hover:text-gray-300" href="https://social.valkyriecoms.com/" aria-label="" >
+                    <a className="text-gray-400 hover:text-gray-300" href="https://valkyriecoms.com/" aria-label="" >
                       Valkyriecoms
                     </a>
                   </li>
