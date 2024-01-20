@@ -1,24 +1,59 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Hero } from "../components/Hero.jsx";
-import { Navbar } from "../components/Navbar.jsx";
-import { Testimonials } from "../components/Testimonials.jsx";
-import { Pricing } from "../components/Pricing.jsx";
-import { FAQ } from "../components/FAQ.jsx";
-import { Brands } from "../components/Brands.jsx";
-import {Divider} from "../components/Divider"
-import { Footer } from "../components/Footer.jsx";
-import "../styles/Navbar.styles.css";
-import "../styles/Hero.styles.css";
-import "../styles/Utils.styles.css";
-import "../styles/FeaturesDiagonal.styles.css";
-import { ScrollUpButton } from "../components/ScrollUpButton";
+import Layout from '~/layouts/PageLayout.astro';
 
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'Dragons child studios',
+  ignoreTitleTemplate: true,
+};
 ---
-<Layout title="Dragons child studios">
-  <Navbar client:load />
-  <Hero client:load />
-  <Divider />
-  <Footer />
-  <ScrollUpButton  client:load />
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero>
+    <Fragment slot="title">
+      Welcome to <span class="hidden xl:inline">Dragons child studios</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Dragons child stuidos</span> is a group of people who like to make cool stuff.</span
+      >
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="projects"
+    tagline="Projects"
+    title="What we are up to"
+    subtitle="Here is some of the projects we have started working on."
+    items={[
+      {
+        title: 'Toastielab',
+        description:
+          'Toastielab is a small git platform operated by us which is operated by one of our founders Toastie',
+        icon: 'tabler:brand-git',
+      },
+      {
+        title: 'Dragons child hosting',
+        description: 'Our small hosting startup providing servers for Minecraft, Terraria, Teamspeak 3 and more.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Valkyriecoms',
+        description: 'Our small social platform which is free from censorship and trackers.',
+        icon: 'tabler:brand-mastodon',
+      },
+    ]}
+  />
 </Layout>
