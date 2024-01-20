@@ -70,9 +70,6 @@
           "properties": {
             "site_name": {
               "type": "string"
-            },
-            "type": {
-              "type": "string"
             }
           },
           "required": [

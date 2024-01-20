@@ -1,6 +1,6 @@
 {
   "name": "dragons-site",
-  "description": "The site for Dragonschildstudios",
+  "description": "the site for dragonschildstudios",
   "version": "1.0.0-beta.13",
   "scripts": {
     "dev": "astro dev",
@@ -12,7 +12,6 @@
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.4",
     "@astrolib/analytics": "^0.5.0",
@@ -32,6 +31,7 @@
     "@iconify-json/flat-color-icons": "^1.1.10",
     "@iconify-json/tabler": "^1.1.103",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/js-yaml": "^4.0.9",
     "@types/lodash.merge": "^4.6.9",
     "@typescript-eslint/eslint-plugin": "^6.18.0",
     "@typescript-eslint/parser": "^6.18.0",
