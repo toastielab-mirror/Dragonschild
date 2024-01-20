@@ -1,6 +1,6 @@
 {
-  "name": "test-site",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
+  "name": "dragons-site",
+  "description": "The site for Dragonschildstudios",
   "version": "1.0.0-beta.13",
   "scripts": {
     "dev": "astro dev",
