@@ -4,14 +4,14 @@ site:
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: FPJESuXiXbfqTUD9DTd0shhHD-1_Mp5sC5FcJ6VAPPU
 
 # Default SEO metadata
 metadata:
   title:
     default: Dragons child studios
     template: '%s'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "Welcome to the offical site for Dragons child studios."
   robots:
     index: true
     follow: true
