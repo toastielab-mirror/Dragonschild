@@ -79,6 +79,8 @@ import { UI } from '~/utils/config';
 
       let href;
       switch (network) {
+        // Commenting these out until they're ready.
+        /*
         case 'facebook':
           href = `https://www.facebook.com/sharer.php?u=${url}`;
           break;
@@ -91,6 +93,7 @@ import { UI } from '~/utils/config';
         case 'whatsapp':
           href = `https://wa.me/?text=${text}%20${url}`;
           break;
+        */
         case 'mail':
           href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
           break;

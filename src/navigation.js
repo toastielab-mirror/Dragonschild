@@ -27,18 +27,6 @@ export const headerData = {
           href: getBlogPermalink(),
         },
         {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
           text: 'Tag Page',
           href: getPermalink('astro', 'tag'),
         },
@@ -63,12 +51,16 @@ export const footerData = {
         { text: 'Status', href: 'https://status.dragonschildhosting.net' },
       ],
     },
+    // Commenting this out until this page is ready.
+    // TODO: Finish this.
+    /*
     {
       title: 'Company',
       links: [
         { text: 'About', href: '/about' },
       ],
     },
+    */
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
