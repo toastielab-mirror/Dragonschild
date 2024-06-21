@@ -21,12 +21,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "name",
-        "site",
-        "base",
-        "trailingSlash"
-      ],
+      "required": ["name", "site", "base", "trailingSlash"],
       "additionalProperties": false
     },
     "metadata": {
@@ -42,10 +37,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "default",
-            "template"
-          ]
+          "required": ["default", "template"]
         },
         "description": {
           "type": "string"
@@ -60,10 +52,7 @@
               "type": "boolean"
             }
           },
-          "required": [
-            "index",
-            "follow"
-          ]
+          "required": ["index", "follow"]
         },
         "openGraph": {
           "type": "object",
@@ -72,10 +61,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "site_name",
-            "type"
-          ]
+          "required": ["site_name", "type"]
         },
         "twitter": {
           "type": "object",
@@ -90,20 +76,10 @@
               "type": "string"
             }
           },
-          "required": [
-            "handle",
-            "site",
-            "cardType"
-          ]
+          "required": ["handle", "site", "cardType"]
         }
       },
-      "required": [
-        "title",
-        "description",
-        "robots",
-        "openGraph",
-        "twitter"
-      ]
+      "required": ["title", "description", "robots", "openGraph", "twitter"]
     },
     "i18n": {
       "type": "object",
@@ -115,10 +91,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "language",
-        "textDirection"
-      ]
+      "required": ["language", "textDirection"]
     },
     "apps": {
       "type": "object",
@@ -151,16 +124,10 @@
                       "type": "boolean"
                     }
                   },
-                  "required": [
-                    "index"
-                  ]
+                  "required": ["index"]
                 }
               },
-              "required": [
-                "isEnabled",
-                "permalink",
-                "robots"
-              ]
+              "required": ["isEnabled", "permalink", "robots"]
             },
             "list": {
               "type": "object",
@@ -181,16 +148,10 @@
                       "type": "boolean"
                     }
                   },
-                  "required": [
-                    "index"
-                  ]
+                  "required": ["index"]
                 }
               },
-              "required": [
-                "isEnabled",
-                "pathname",
-                "robots"
-              ]
+              "required": ["isEnabled", "pathname", "robots"]
             },
             "category": {
               "type": "object",
@@ -211,16 +172,10 @@
                       "type": "boolean"
                     }
                   },
-                  "required": [
-                    "index"
-                  ]
+                  "required": ["index"]
                 }
               },
-              "required": [
-                "isEnabled",
-                "pathname",
-                "robots"
-              ]
+              "required": ["isEnabled", "pathname", "robots"]
             },
             "tag": {
               "type": "object",
@@ -241,31 +196,16 @@
                       "type": "boolean"
                     }
                   },
-                  "required": [
-                    "index"
-                  ]
+                  "required": ["index"]
                 }
               },
-              "required": [
-                "isEnabled",
-                "pathname",
-                "robots"
-              ]
+              "required": ["isEnabled", "pathname", "robots"]
             }
           },
-          "required": [
-            "isEnabled",
-            "postsPerPage",
-            "post",
-            "list",
-            "category",
-            "tag"
-          ]
+          "required": ["isEnabled", "postsPerPage", "post", "list", "category", "tag"]
         }
       },
-      "required": [
-        "blog"
-      ]
+      "required": ["blog"]
     },
     "analytics": {
       "type": "object",
@@ -277,29 +217,20 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                  "type": ["string", "null"]
                 },
                 "partytown": {
                   "type": "boolean",
                   "default": true
                 }
               },
-              "required": [
-                "id"
-              ]
+              "required": ["id"]
             }
           },
-          "required": [
-            "googleAnalytics"
-          ]
+          "required": ["googleAnalytics"]
         }
       },
-      "required": [
-        "vendors"
-      ]
+      "required": ["vendors"]
     },
     "ui": {
       "type": "object",
@@ -385,17 +316,10 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "sans",
-                    "serif",
-                    "heading"
-                  ]
+                  "required": ["sans", "serif", "heading"]
                 }
               },
-              "required": [
-                "colors",
-                "fonts"
-              ]
+              "required": ["colors", "fonts"]
             },
             "dark": {
               "type": "object",
@@ -463,30 +387,14 @@
                   "type": "object"
                 }
               },
-              "required": [
-                "colors",
-                "fonts"
-              ]
+              "required": ["colors", "fonts"]
             }
           },
-          "required": [
-            "default",
-            "dark"
-          ]
+          "required": ["default", "dark"]
         }
       },
-      "required": [
-        "theme",
-        "tokens"
-      ]
+      "required": ["theme", "tokens"]
     }
   },
-  "required": [
-    "site",
-    "metadata",
-    "i18n",
-    "apps",
-    "analytics",
-    "ui"
-  ]
+  "required": ["site", "metadata", "i18n", "apps", "analytics", "ui"]
 }
