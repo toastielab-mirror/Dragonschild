@@ -49,6 +49,7 @@ export const footerData = {
       title: 'Support',
       links: [
         { text: 'Status', href: 'https://status.dragonschildhosting.net' },
+        { text: 'Forums', href: 'https://forum.dragonschildstudios.com' },
       ],
     },
     // Commenting this out until this page is ready.
@@ -62,12 +63,14 @@ export const footerData = {
     },
     */
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-  ],
+  secondaryLinks: [{ text: 'Terms', href: getPermalink('/terms') }],
   socialLinks: [
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Toastielab', icon: 'tabler:brand-git', href: 'https://toastielab.dev/Dragonschildstudios/dragonschildstudios.com' },
+    {
+      ariaLabel: 'Toastielab',
+      icon: 'tabler:brand-git',
+      href: 'https://toastielab.dev/Dragonschildstudios/dragonschildstudios.com',
+    },
   ],
   footNote: `
     <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://dragonschildstudios.com/"> Dragons child studios</a> · All rights reserved.

@@ -11,7 +11,7 @@ metadata:
   title:
     default: Dragons child studios
     template: '%s'
-  description: "Welcome to the offical site for Dragons child studios."
+  description: 'Welcome to the offical site for Dragons child studios.'
   robots:
     index: true
     follow: true
