@@ -49,19 +49,14 @@ export const footerData = {
       title: 'Support',
       links: [
         { text: 'Status', href: 'https://status.dragonschildhosting.net' },
-        { text: 'Forums', href: 'https://forum.dragonschildstudios.com' },
       ],
     },
-    // Commenting this out until this page is ready.
-    // TODO: Finish this.
-    /*
     {
       title: 'Company',
       links: [
         { text: 'About', href: '/about' },
       ],
     },
-    */
   ],
   secondaryLinks: [{ text: 'Terms', href: getPermalink('/terms') }],
   socialLinks: [
