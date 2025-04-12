@@ -1,81 +1,37 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
+import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import AutoImport from "astro-auto-import";
+import { defineConfig } from "astro/config";
+import remarkCollapse from "remark-collapse";
+import remarkToc from "remark-toc";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 
-import { defineConfig, squooshImageService } from 'astro/config';
-
-import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
-import mdx from '@astrojs/mdx';
-import partytown from '@astrojs/partytown';
-import icon from 'astro-icon';
-import tasks from './src/utils/tasks';
-
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
-
-import { ANALYTICS, SITE } from './src/utils/config.ts';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const whenExternalScripts = (items = []) =>
-  ANALYTICS.vendors.googleAnalytics.id && ANALYTICS.vendors.googleAnalytics.partytown
-    ? Array.isArray(items)
-      ? items.map((item) => item())
-      : [items()]
-    : [];
-
+// https://astro.build/config
 export default defineConfig({
-  site: SITE.site,
-  base: SITE.base,
-  trailingSlash: SITE.trailingSlash ? 'always' : 'never',
-
-  output: 'static',
-
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    sitemap(),
-    mdx(),
-    icon({
-      include: {
-        tabler: ['*'],
-        'flat-color-icons': [
-          'template',
-          'gallery',
-          'approval',
-          'document',
-          'advertising',
-          'currency-exchange',
-          'voice-presentation',
-          'business-contact',
-          'database',
-        ],
-      },
-    }),
-
-    ...whenExternalScripts(() =>
-      partytown({
-        config: { forward: ['dataLayer.push'] },
-      })
-    ),
-
-    tasks(),
-  ],
-
-  image: {
-    service: squooshImageService(),
+  site: "https://dragonschildstudios.com",
+  base: "/",
+  trailingSlash: "ignore",
+  prefetch: {
+    prefetchAll: true
   },
-
+  integrations: [react(), sitemap(), tailwind({
+    config: {
+      applyBaseStyles: false
+    }
+  }), AutoImport({
+    imports: ["@components/common/Button.astro", "@shortcodes/Accordion", "@shortcodes/Notice", "@shortcodes/Youtube", "@shortcodes/Tabs", "@shortcodes/Tab"]
+  }), mdx()],
   markdown: {
-    remarkPlugins: [readingTimeRemarkPlugin],
-    rehypePlugins: [responsiveTablesRehypePlugin],
-  },
-
-  vite: {
-    resolve: {
-      alias: {
-        '~': path.resolve(__dirname, './src'),
-      },
+    remarkPlugins: [remarkToc, [remarkCollapse, {
+      test: "Table of contents"
+    }], remarkMath],
+    rehypePlugins: [[rehypeKatex, {}]],
+    shikiConfig: {
+      theme: "dark-plus", // https://shiki.style/themes
     },
+    extendDefaultPlugins: true
   },
 });
