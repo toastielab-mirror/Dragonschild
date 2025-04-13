@@ -14,19 +14,14 @@ const searchable = z.object({
 const social = z.object({
   discord: z.string().optional(),
   email: z.string().optional(),
-  github: z.string().optional(),
-  instagram: z.string().optional(),
+  toastielab: z.string().optional(),
+  valkyriecoms: z.string().optional(),
   website: z.string().optional(),
   youtube: z.string().optional(),
 });
 
 const about = defineCollection({
   loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/about" }),
-  schema: ({ image }) =>
-    searchable.extend({
-      image: image().optional(),
-      imageAlt: z.string().default("image"),
-    }),
 });
 
 const authors = defineCollection({
@@ -55,19 +50,6 @@ const blog = defineCollection({
       tags: z.array(z.string()).optional(),
       complexity: z.number().default(1),
       hideToc: z.boolean().default(false),
-    }),
-});
-
-const docs = defineCollection({
-  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/docs" }),
-  schema: ({ image }) =>
-    searchable.extend({
-      pubDate: z.date().optional(),
-      modDate: z.date().optional(),
-      image: image().optional(),
-      imageAlt: z.string().default("image"),
-      hideToc: z.boolean().default(false),
-      hideNav: z.boolean().default(false),
     }),
 });
 
@@ -100,74 +82,16 @@ const indexCards = defineCollection({
   }),
 });
 
-const poetry = defineCollection({
-  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/poetry" }),
-  schema: ({ image }) =>
-    searchable.extend({
-      date: z.date().optional(),
-      image: image().optional(),
-      imageAlt: z.string().default("image"),
-      author: reference("authors").optional(),
-    }),
-});
-
-const portfolio = defineCollection({
-  loader: glob({
-    pattern: "-index.{md,mdx}",
-    base: "./src/content/portfolio",
-  }),
-  schema: searchable.extend({
-    projects: z.array(
-      z.object({
-        title: z.string(),
-        github: z.string().optional(),
-        technologies: z.array(z.string()).optional(),
-        content: z.array(z.string()).optional(),
-      }),
-    ),
-  }),
-});
-
-const recipes = defineCollection({
-  loader: glob({
-    pattern: "**\/[^_]*.{md,mdx}",
-    base: "./src/content/recipes",
-  }),
-  schema: ({ image }) =>
-    searchable.extend({
-      date: z.date().optional(),
-      image: image().optional(),
-      imageAlt: z.string().default("image"),
-      author: reference("authors").optional(),
-      prepTime: z.number().optional(),
-      servings: z.number().optional(),
-      diet: z.string().optional(),
-      ingredients: z
-        .object({
-          list: z.array(z.string()),
-          qty: z.array(z.string()),
-        })
-        .optional(),
-      instructions: z.array(z.string()).optional(),
-      notes: z.array(z.string()).optional(),
-    }),
-});
-
 const terms = defineCollection({
   loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/terms" }),
   schema: searchable,
 });
-
 // Export collections
 export const collections = {
   about,
   authors,
   blog,
-  docs,
   home,
   indexCards,
-  poetry,
-  portfolio,
-  recipes,
   terms,
 };
