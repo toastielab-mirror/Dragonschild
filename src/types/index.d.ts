@@ -28,6 +28,7 @@ export type SocialLinks = {
   dchosting?: string;
   website?: string;
   youtube?: string;
+  dcsite?: string;
 };
 
 export type EntryReference = {

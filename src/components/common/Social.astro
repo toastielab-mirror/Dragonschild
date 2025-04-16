@@ -153,4 +153,20 @@ const iconClass =
       </li>
     )
   }
+  {
+    links.dcsite && (
+      <li class={liClass}>
+        <a
+          class={iconClass}
+          aria-label="Website"
+          href={links.dcsite}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <span class="sr-only">Dragon's child studios</span>
+          <FaGlobe className="w-6 h-6" />
+        </a>
+      </li>
+    )
+  }
 </ul>

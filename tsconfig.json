@@ -12,7 +12,7 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "types": [
-      "@astrojs/client"
+      "astro/client"
     ],
     "paths": {
       "@assets/*": [
