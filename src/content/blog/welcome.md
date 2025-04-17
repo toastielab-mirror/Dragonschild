@@ -1,7 +1,7 @@
 ---
 title: "Welcome to Dragons child studios"
 description: Here is a post talking about what we do and welcoming you to our site.
-date: 2025-05-14
+date: 2025-04-14
 categories: [welcome]
 author: toastie_t0ast
 hideToc: true
