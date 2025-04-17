@@ -1,68 +1,97 @@
-import { z, defineCollection } from 'astro:content';
+import { defineCollection, reference, z } from "astro:content";
+import { glob } from "astro/loaders";
 
-const metadataDefinition = () =>
-  z
-    .object({
-      title: z.string().optional(),
-      ignoreTitleTemplate: z.boolean().optional(),
+// May also need to update /src/types/index.d.ts when updating this file
+// When updating the set of searchable collections, update collectionList in /src/pages/search.astro
 
-      canonical: z.string().url().optional(),
+const searchable = z.object({
+  title: z.string(),
+  description: z.string().optional(),
+  autodescription: z.boolean().default(true),
+  draft: z.boolean().default(false),
+});
 
-      robots: z
+const social = z.object({
+  discord: z.string().optional(),
+  email: z.string().optional(),
+  toastielab: z.string().optional(),
+  valkyriecoms: z.string().optional(),
+  website: z.string().optional(),
+  youtube: z.string().optional(),
+});
+
+const about = defineCollection({
+  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/about" }),
+});
+
+const authors = defineCollection({
+  loader: glob({
+    pattern: "**\/[^_]*.{md,mdx}",
+    base: "./src/content/authors",
+  }),
+  schema: ({ image }) =>
+    searchable.extend({
+      email: z.string().optional(),
+      image: image().optional(),
+      imageAlt: z.string().default("image"),
+      social: social.optional(),
+    }),
+});
+
+const blog = defineCollection({
+  loader: glob({ pattern: "**\/[^_]*.{md,mdx}", base: "./src/content/blog" }),
+  schema: ({ image }) =>
+    searchable.extend({
+      date: z.date().optional(),
+      image: image().optional(),
+      imageAlt: z.string().default("image"),
+      author: reference("authors").optional(),
+      categories: z.array(z.string()).optional(),
+      tags: z.array(z.string()).optional(),
+      complexity: z.number().default(1),
+      hideToc: z.boolean().default(false),
+    }),
+});
+
+const home = defineCollection({
+  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/home" }),
+  schema: ({ image }) =>
+    z.object({
+      image: image().optional(),
+      imageAlt: z.string().default("image"),
+      title: z.string(),
+      content: z.string(),
+      button: z
         .object({
-          index: z.boolean().optional(),
-          follow: z.boolean().optional(),
+          label: z.string(),
+          link: z.string().optional(),
         })
         .optional(),
+    }),
+});
 
-      description: z.string().optional(),
-
-      openGraph: z
-        .object({
-          url: z.string().optional(),
-          siteName: z.string().optional(),
-          images: z
-            .array(
-              z.object({
-                url: z.string(),
-                width: z.number().optional(),
-                height: z.number().optional(),
-              })
-            )
-            .optional(),
-          locale: z.string().optional(),
-          type: z.string().optional(),
-        })
-        .optional(),
-
-      twitter: z
-        .object({
-          handle: z.string().optional(),
-          site: z.string().optional(),
-          cardType: z.string().optional(),
-        })
-        .optional(),
-    })
-    .optional();
-
-const postCollection = defineCollection({
+const indexCards = defineCollection({
+  loader: glob({
+    pattern: "-index.{md,mdx}",
+    base: "./src/content/index-cards",
+  }),
   schema: z.object({
-    publishDate: z.date().optional(),
-    updateDate: z.date().optional(),
-    draft: z.boolean().optional(),
-
     title: z.string(),
-    excerpt: z.string().optional(),
-    image: z.string().optional(),
-
-    category: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-    author: z.string().optional(),
-
-    metadata: metadataDefinition(),
+    description: z.string(),
+    cards: z.array(z.string()),
   }),
 });
 
+const terms = defineCollection({
+  loader: glob({ pattern: "-index.{md,mdx}", base: "./src/content/terms" }),
+  schema: searchable,
+});
+// Export collections
 export const collections = {
-  post: postCollection,
+  about,
+  authors,
+  blog,
+  home,
+  indexCards,
+  terms,
 };

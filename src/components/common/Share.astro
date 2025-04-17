@@ -1,0 +1,44 @@
+---
+import { IoMail, IoLogoFacebook, IoLogoTwitter } from "react-icons/io5";
+
+import { PiFediverseLogo } from "react-icons/pi";
+
+interface Props {
+  title?: string;
+  description?: string | null;
+  folder?: string;
+  id?: string;
+}
+
+const { title, description, folder, id }: Props = Astro.props;
+
+const baseURL = "https://dragonschild.com";
+
+const iconClass =
+  "glass-t rounded text-txt-p dark:text-darkmode-txt-p flex h-9 w-9 items-center justify-center text-center intersect:animate-fadeUp opacity-0 hover:bg-opacity-20";
+---
+
+<ul class="">
+  <li class="inline-block px-1">
+    <a
+      class={iconClass}
+      href=`mailto:?subject=${title}&body=Check this out: ${baseURL}/${folder}/${id}%0D%0A%0D%0A${description}%0D%0A%0D%0A`
+      title="Share by Email"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <IoMail className="h-6 w-6" />
+    </a>
+  </li>
+  <li class="inline-block px-1">
+    <a
+      class={iconClass}
+      aria-label="valkyriecoms share button"
+      href={`https://valkyriecoms.com/share/?text=${title}&amp;url=${baseURL}/${folder}/${id}`}
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <PiFediverseLogo className="h-6 w-6" />
+    </a>
+  </li>
+</ul>
