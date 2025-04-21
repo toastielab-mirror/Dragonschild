@@ -2,4 +2,4 @@
 
 ## Live link
 
-https://dragonschildstudios.com/
+https://dragonschild.com/
